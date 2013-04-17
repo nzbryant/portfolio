@@ -1,0 +1,24 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: speedlearner_dev
+  pool: 5
+  username: rodneybryant
+  password: whanga12
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: speedlearner_test
+  pool: 5
+  username: rodneybryant
+  password: whanga12
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: speedlearner
+  username: rodneybryant
+  password: whanga12
+  pool: 5
+  timeout: 5000
