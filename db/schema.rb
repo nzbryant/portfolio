@@ -43,9 +43,6 @@ ActiveRecord::Schema.define(:version => 20130418162110) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "max_scores", ["test_id"], :name => "index_max_scores_on_test_id"
-  add_index "max_scores", ["user_id"], :name => "index_max_scores_on_user_id"
-
   create_table "questions", :force => true do |t|
     t.string   "text"
     t.datetime "created_at", :null => false
