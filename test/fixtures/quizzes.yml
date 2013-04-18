@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: 
+  description: 
+  is_private: 
+  created: 2013-04-18
+
+two:
+  title: 
+  description: 
+  is_private: 
+  created: 2013-04-18

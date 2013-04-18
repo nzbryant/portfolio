@@ -4,7 +4,7 @@ class CreateKeywords < ActiveRecord::Migration
       t.string :text
 
       t.timestamps
-      t.references :test
+      t.references :quiz
       t.references :question
     end
   end

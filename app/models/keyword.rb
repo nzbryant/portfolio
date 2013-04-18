@@ -1,7 +1,7 @@
-class Keyword < ActiveRecord::Base
+keclass Keyword < ActiveRecord::Base
   attr_accessible :text
 
-  belongs_to :test
+  belongs_to :quiz
   belongs_to :question
 
 end

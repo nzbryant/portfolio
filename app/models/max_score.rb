@@ -1,6 +1,6 @@
 class MaxScore < ActiveRecord::Base
-  attr_accessible :score, :user, :test
+  attr_accessible :score, :user, :quiz
 
   belongs_to :user
-  belongs_to :test
+  belongs_to :quiz
 end

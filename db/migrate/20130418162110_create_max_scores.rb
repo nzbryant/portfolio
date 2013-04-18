@@ -3,7 +3,7 @@ class CreateMaxScores < ActiveRecord::Migration
     create_table :max_scores do |t|
       t.integer :score
       t.references :user
-      t.references :test
+      t.references :quiz
 
       t.timestamps
     end

@@ -31,14 +31,14 @@ ActiveRecord::Schema.define(:version => 20130418162110) do
     t.string   "text"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "test_id"
+    t.integer  "quiz_id"
     t.integer  "question_id"
   end
 
   create_table "max_scores", :force => true do |t|
     t.integer  "score"
     t.integer  "user_id"
-    t.integer  "test_id"
+    t.integer  "quiz_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(:version => 20130418162110) do
     t.string   "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "test_id"
+    t.integer  "quiz_id"
   end
 
-  create_table "tests", :force => true do |t|
+  create_table "quizzes", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.boolean  "is_private"
@@ -70,8 +70,9 @@ ActiveRecord::Schema.define(:version => 20130418162110) do
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "is_logged_in"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
