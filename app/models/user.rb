@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 
   has_many :max_scores
   has_many :quizzes, :through => :max_scores
+  
 end
