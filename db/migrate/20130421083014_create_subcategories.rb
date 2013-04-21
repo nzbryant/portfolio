@@ -4,6 +4,7 @@ class CreateSubcategories < ActiveRecord::Migration
       t.string :name
 
       t.timestamps
+      t.references :category
     end
   end
 end

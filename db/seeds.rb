@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+cat1 = Category.create :name => "Programming"
+cat2 = Category.create :name => "Language"
+cat3 = Category.create :name => "Business"
+cat4 = Category.create :name => "Acquisitions"
+cat5 = Category.create :name => "Mining"
+
+
