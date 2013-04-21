@@ -1,9 +1,9 @@
 class Quiz < ActiveRecord::Base
   attr_accessible :created, :description,
-   :is_private, :title, :category, :user, :questions, :keywords, :max_scores
+   :is_private, :title, :subcategory, :user, :questions, :keywords, :max_scores
    
 
-  belongs_to :category
+  belongs_to :subcategory
   belongs_to :user
   has_many :questions
   has_many :keywords
