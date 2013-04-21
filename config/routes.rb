@@ -1,4 +1,17 @@
 Speedlearner::Application.routes.draw do
+  get "create" => "index#create"
+
+  get "edit" => "index#edit"
+
+  get "quiz" => "index#quiz"
+
+  get "category" => "index#category"
+
+  get "login" => "index#login"
+
+  get "logout" => "index#logout"
+
+  get "join" => "index#join"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +61,7 @@ Speedlearner::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'index#index'
 
   # See how all your routes lay out with "rake routes"
 
