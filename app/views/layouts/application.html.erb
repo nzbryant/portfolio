@@ -2,20 +2,23 @@
 <html>
 <head>
   <title>Speed Learner</title>
-  <!--%= stylesheet_link_tag    "application", :media => "all" %-->
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <!--%= javascript_include_tag "application" %-->
-  <!--%= csrf_meta_tags %-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+    
 </head>
 
 <body>
+
   <header class="navbar navbar-fixed-top">
         <nav class="navbar-inner">
           <div class="container">
             <%= render 'layouts/navigation' %>
+          
           </div>
         </nav>
-   </header>
+</header>
     
 <%= yield %>
 
@@ -35,15 +38,12 @@
               </ul>
             </div>
           </nav>
-          <p class="muted credit span8 text-right" style="padding: 10px 0">
+          <p class="muted credit span8 text-right" style="padding: 50px 0">
             &copy; 2013 Life Capital Ltd
           </p>
         </div>
       </div>
     </footer>
-  
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
 

@@ -12,6 +12,8 @@ Speedlearner::Application.routes.draw do
   get "logout" => "index#logout"
 
   get "join" => "index#join"
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

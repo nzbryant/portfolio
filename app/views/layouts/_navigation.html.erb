@@ -27,7 +27,9 @@
 
  <!-- % #if current_user % -->
     <li><%=
-      link_to 'Log out', logout_path
+      link_to_unless_current 'Log Out', logout_path do
+      content_tag :span, 'Log Out', :class => 'this_page'
+      end
     %></li>
  <!-- % #else % -->
     <li><%=
@@ -36,8 +38,8 @@
       end
     %></li>
     <li><%=
-      link_to_unless_current 'Log in', login_path do
-        content_tag :span, 'Log in', :class => 'this_page'
+      link_to_unless_current 'Log In', login_path do
+        content_tag :span, 'Log In', :class => 'this_page'
       end
     %></li>
 <!-- % #end % -->
