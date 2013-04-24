@@ -4,24 +4,10 @@
   end
 %>
 <ul class="nav">
+
   <li><%=
-    link_to_unless_current 'Categories', category_path do
-      content_tag :span, 'Categories', :class => 'this_page'
-    end
-  %></li>
-  <li><%=
-    link_to_unless_current 'Take a Quiz', quiz_path do
-      content_tag :span, 'Take a Quiz', :class => 'this_page'
-    end
-  %></li>
-  <li><%=
-    link_to_unless_current 'Create Quiz', create_path do
+    link_to_unless_current 'Create Quiz', new_quiz_path do
       content_tag :span, 'Create Quiz', :class => 'this_page'
-    end
-  %></li>
-  <li><%=
-    link_to_unless_current 'Edit a Quiz', edit_path do
-      content_tag :span, 'Edit', :class => 'this_page'
     end
   %></li>
 

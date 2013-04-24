@@ -1,1 +1,19 @@
-<!--<h1>Speed Learner</h1>-->
+<table class="table">
+  <thead>
+    <tr>
+      <th class="th-categ-name">Category</th>
+      <!--th class="th-categ-dogs">Dogs</th-->
+      <!--th class="th-categ-edit"></th-->
+      <!--th class="th-categ-delete"></th-->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for category in @categories %>
+      <tr>
+        <td><%= link_to category.name, category_path(category) %></td>
+        <td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

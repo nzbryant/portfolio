@@ -1,17 +1,14 @@
 Speedlearner::Application.routes.draw do
-  get "create" => "index#create"
 
-  get "edit" => "index#edit"
-
-  get "quiz" => "index#quiz"
-
-  get "category" => "index#category"
+  resources :quizzes
+  resources :categories
 
   get "login" => "index#login"
 
   get "logout" => "index#logout"
 
   get "join" => "index#join"
+
 
   
   # The priority is based upon order of creation:

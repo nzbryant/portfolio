@@ -1,0 +1,15 @@
+<%= form_for @quiz do |f| %>
+  <p class="field">
+    <%= f.label :title, 'Quiz Title' %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.radio_button :is_private, true %> Private
+    <%= f.radio_button :is_private, false, :checked => true %> Public
+  </p>
+  
+  <p class="actions">
+    <%= f.submit :class => 'btn btn-primary' %>
+  </p>
+<% end %>

@@ -10,5 +10,6 @@ class Quiz < ActiveRecord::Base
   has_many :max_scores
   has_many :users, :through => :max_scores
 
+  validates :title, :presence => true
 
 end
