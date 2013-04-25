@@ -9,7 +9,6 @@ gem 'rails', '3.2.13'
 gem 'postgres-pr'
 gem 'pg'
 gem 'bootstrap-sass'
-gem 'better_errors' 
 gem 'simple_form'
 
 # Gems used only for assets and not required
@@ -27,7 +26,11 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+ gem 'bcrypt-ruby', '~> 3.0.0'
+
+group :development do
+	gem 'better_errors' 
+end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

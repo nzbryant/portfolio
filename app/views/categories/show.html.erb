@@ -1,2 +1,24 @@
-<h1>Category#show</h1>
-<p>Find me in app/views/category/show.html.erb</p>
+<h1>Category: <%= @category.name %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="th-categ-name">Sub-Categories</th>
+      <th class="th-categ-name">Quizzes</th>
+      
+      <!--th class="th-categ-dogs">Dogs</th-->
+      <!--th class="th-categ-edit"></th-->
+      <!--th class="th-categ-delete"></th-->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for subcategory in @category.subcategories %>
+      <tr>
+        <td>
+          <%= link_to subcategory.name, category_subcategory_path(subcategory) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
