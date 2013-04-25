@@ -5,10 +5,7 @@
     <tr>
       <th class="th-categ-name">Sub-Categories</th>
       <th class="th-categ-name">Quizzes</th>
-      
-      <!--th class="th-categ-dogs">Dogs</th-->
-      <!--th class="th-categ-edit"></th-->
-      <!--th class="th-categ-delete"></th-->
+     
     </tr>
   </thead>
 
@@ -16,7 +13,12 @@
     <% for subcategory in @category.subcategories %>
       <tr>
         <td>
-          <%= link_to subcategory.name, category_subcategory_path(subcategory) %>
+          <%= subcategory.name %>
+        </td>
+        <td>
+          <% subcategory.quizzes.each do |quiz| %> 
+            <%= link_to quiz.title, quiz_path(quiz) %>
+          <% end %>
         </td>
       </tr>
     <% end %>
