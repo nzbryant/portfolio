@@ -1,6 +1,6 @@
 <h1>Category: <%= @category.name %></h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th class="th-categ-name">Sub-Categories</th>
@@ -17,7 +17,7 @@
         </td>
         <td>
           <% subcategory.quizzes.each do |quiz| %> 
-            <%= link_to quiz.title, quiz_path(quiz) %>
+            <%= link_to quiz.title, quiz_path(quiz) %> &nbsp; / &nbsp;
           <% end %>
         </td>
       </tr>

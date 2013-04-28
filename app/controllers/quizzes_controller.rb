@@ -12,6 +12,20 @@ class QuizzesController < ApplicationController
      @quiz = Quiz.find(params[:id]) # To show a specific quiz, we must first find that quiz. Returns show.html.erb.
   end
 
+  def check_answers
+    @quiz = Quiz.find(params[:id])
+
+    @total = 0
+
+    @quiz.questions.each do |question|
+      if params[question.id.to_s]
+        (@total = @total + 1) if question.answers.find(params[question.id.to_s]).is_correct
+      end
+    end
+
+    render :text => @total
+  end
+
   def edit
     @quiz = Quiz.find(params[:id]) # We find the quiz to display his data in the edit form. Returns edit.html.erb.
   end

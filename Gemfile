@@ -10,6 +10,10 @@ gem 'postgres-pr'
 gem 'pg'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'cocoon'
+gem 'formtastic'
+gem 'haml-rails'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,6 +34,8 @@ gem 'jquery-rails'
 
 group :development do
 	gem 'better_errors' 
+	gem 'lorem'
+	gem 'populator'
 end
 
 # To use Jbuilder templates for JSON

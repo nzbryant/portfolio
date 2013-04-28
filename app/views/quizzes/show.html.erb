@@ -1,2 +1,35 @@
-<h1>Quiz#show</h1>
-<p>Find me in app/views/quiz/show.html.erb</p>
+<h1>Quiz: <%= @quiz.title %></h1>
+
+<form method="get" action="/quizzes/<%= @quiz.id %>/check_answers">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="th-categ-name">Question</th>
+      <th class="th-categ-name">Choice of Answers</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for question in @quiz.questions %>
+      <tr>
+        <td>
+          <%= question.text %>
+        </td>
+        <td>
+          <% question.answers.each do |answer| %>
+             <input type="radio" id="answer_<%= answer.id %>" name="<%= question.id %>" value="<%= answer.id %>">
+             &nbsp; <%= answer.text %><br>
+             
+          
+            <!--%= link_to quiz.title, quiz_path(quiz) %-->
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <p>
+    <input type="submit" value="Check your answers">
+  </p>
+</form>

@@ -1,4 +1,6 @@
 class SiteController < ApplicationController
+before_filter :authorize, :except => [:index, :login]
+
   def index
     current_user
   end
@@ -19,4 +21,10 @@ class SiteController < ApplicationController
     
     redirect_to root_url
   end
+end
+
+def authorise
+	unless current_user
+		redirect_to root_url
+	end
 end

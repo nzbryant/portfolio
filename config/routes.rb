@@ -1,13 +1,21 @@
 Speedlearner::Application.routes.draw do
 
 
+  get "questions/index"
+
+  get "questions/_form"
+
   get "login" => "site#login", :as => :login
 
   post "login" => "site#login", :as => :login
   get "logout" => "site#logout", :as => :logout
 
 
-  resources :quizzes
+  resources :quizzes do
+    member do
+      get "check_answers"
+    end
+  end
   
   resources :categories do 
     resources :subcategories 
