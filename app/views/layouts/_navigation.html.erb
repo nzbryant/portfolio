@@ -10,23 +10,3 @@
       content_tag :span, 'Create Quiz', :class => 'this_page'
     end
   %></li>
-
- <!-- % #if current_user % -->
-    <li><%=
-      link_to_unless_current 'Log Out', logout_path do
-      content_tag :span, 'Log Out', :class => 'this_page'
-      end
-    %></li>
- <!-- % #else % -->
-    <li><%=
-      link_to_unless_current 'Sign Up', join_path do
-        content_tag :span, 'Sign Up', :class => 'this_page'
-      end
-    %></li>
-    <li><%=
-      link_to_unless_current 'Log In', login_path do
-        content_tag :span, 'Log In', :class => 'this_page'
-      end
-    %></li>
-<!-- % #end % -->
-</ul>

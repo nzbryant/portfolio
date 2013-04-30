@@ -2,7 +2,10 @@
 
 <!--% f.inputs do %-->
   <!--%= f.input :name %-->
-  <%= f.input :title %>
+  <%= f.input :title, :label => 'Name of Quiz'%> 
+  <!--%= f.input :category, :label => 'Enter category' %--> 
+  <%= f.input :subcategory, :label => 'Enter subcategory' %> 
+  
   
   <h3>Questions</h3>
   <div id='questions'>
@@ -11,6 +14,7 @@
       <%= render 'question_fields', :f => question %>
       <% end %>
     <div class='links'>
+
       <%= link_to_add_association 'Add a question', f, :questions %>
     </div>
   <!--% end %-->

@@ -13,5 +13,6 @@
  *= require bootstrap
  *= require index
  *= require formtastic
- // require my_formtastic_changes
+ *= require my_formtastic_changes
  */
+

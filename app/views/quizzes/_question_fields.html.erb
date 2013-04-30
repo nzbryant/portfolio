@@ -1,8 +1,18 @@
 <div class='nested-fields'>
   <!--%= f.inputs do %-->
-    <%= f.input :text %>
+    <%= f.input :text, :label => 'Question'%>
     <!--%= f.input :done, :as => :boolean %-->
 
-    <%= link_to_remove_association "Remove ", f %>
+    <%= link_to_remove_association "Remove Question", f %>
+    <br>
+
+    <%= f.semantic_fields_for :answers do |answer| %>
+      <%= render 'answer_fields', :f => answer %>
+      <% end %>
+    <div class='links'>
+      <br>
+      <%= link_to_add_association 'Add a potential answer', f, :answers %>
+    </div>
+
   <!--% end %-->
 </div>
