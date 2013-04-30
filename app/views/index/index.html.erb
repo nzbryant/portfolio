@@ -1,3 +1,8 @@
+<h1>Welcome to SpeedLearner</h1>
+<br>
+<h4>Choose a category below to take or create a quiz!</h4>
+<br>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -9,9 +14,10 @@
   </thead>
 
   <tbody>
+    <!--% :order => "name DESC" %-->
     <% for category in @categories %>
       <tr>
-        <td><%= link_to category.name, category_path(category) %></td>
+        <td><%= link_to category.name, category_path(category)  %></td>
         <td>
       </tr>
     <% end %>

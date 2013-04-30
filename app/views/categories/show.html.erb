@@ -1,5 +1,9 @@
 <h1>Category: <%= @category.name %></h1>
+<br>
+<h2>Take one of the quizzes below, or <%= link_to "create a new quiz", 
+new_quiz_category_path(@category) %> in this category</h2>
 
+<bR>
 <table class="table table-striped">
   <thead>
     <tr>

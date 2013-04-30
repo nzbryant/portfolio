@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20130421083014) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "subcategory_id"
+    t.integer  "category_id"
     t.integer  "user_id"
   end
 
@@ -71,8 +72,11 @@ ActiveRecord::Schema.define(:version => 20130421083014) do
     t.string   "username"
     t.string   "password"
     t.boolean  "is_logged_in"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.string   "password_confirmation"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
 end

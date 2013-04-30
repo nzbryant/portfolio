@@ -1,0 +1,22 @@
+<h1>Subcategory: <%= @subcategory.name %></h1>
+<br>
+
+<bR>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="th-categ-name">Quizzes</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for quiz in @subcategory.quizzes %>
+      <tr>
+        <td>
+            <%= link_to quiz.title, quiz_path(quiz) %> &nbsp;
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

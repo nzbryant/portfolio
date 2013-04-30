@@ -14,16 +14,17 @@ class QuizzesController < ApplicationController
 
   def check_answers
     @quiz = Quiz.find(params[:id])
-
+    
     @total = 0
+    @ans = 0
 
     @quiz.questions.each do |question|
       if params[question.id.to_s]
         (@total = @total + 1) if question.answers.find(params[question.id.to_s]).is_correct
+        @ans = @ans + 1
       end
     end
 
-    render :text => @total
   end
 
   def edit

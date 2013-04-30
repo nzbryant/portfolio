@@ -18,7 +18,7 @@
         </td>
         <td>
           <% question.answers.each do |answer| %>
-             <input type="radio" id="answer_<%= answer.id %>" name="<%= question.id %>" value="<%= answer.id %>">
+             <input type="radio" id="answer_<%= answer.id %>" name="<%= question.id %>" value="<%= answer.id %>" checked = true>
              &nbsp; <%= answer.text %><br>
              
           

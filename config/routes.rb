@@ -1,6 +1,8 @@
 Speedlearner::Application.routes.draw do
 
 
+  get "subcategories/show"
+
   get "questions/index"
 
   get "questions/_form"
@@ -17,8 +19,13 @@ Speedlearner::Application.routes.draw do
     end
   end
   
+  resources :subcategories
+   
   resources :categories do 
-    resources :subcategories 
+    member do
+      get "new_quiz"
+      post "create_quiz"
+    end
   end
 
 
