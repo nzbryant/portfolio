@@ -5,7 +5,8 @@
 	float: left;
 	padding-top: .3em;
 	padding-bottom: .3em;
-	font-size: 14px;
+	font-size: 16px;
+
 }
 
 .formtastic .input {
@@ -13,7 +14,7 @@
 }
 
 .formtastic .buttons, .formtastic .actions {
-	font-size: 24px;
+	font-size: 18px;
 	padding-left: 17%;
 	padding-top: 1.5em;
 

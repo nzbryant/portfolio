@@ -1,5 +1,9 @@
-Speedlearner::Application.routes.draw do
+ Speedlearner::Application.routes.draw do
 
+
+  get "csv/upload"
+
+  get "csv/view"
 
   get "subcategories/show"
 

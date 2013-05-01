@@ -45,6 +45,7 @@ class QuizzesController < ApplicationController
   end
 
   def create
+    params[:quiz][:subcategory] = Subcategory.find(params[:quiz][:subcategory])
     @quiz = Quiz.new(params[:quiz]) # We create a new member from the params passed by the form
     respond_to do |format|
       if @quiz.save
