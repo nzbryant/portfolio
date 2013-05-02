@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #require "lorem"
-require "populator"
+#require "populator"
 #categories
 
 Category.delete_all
