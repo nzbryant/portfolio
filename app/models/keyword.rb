@@ -1,4 +1,4 @@
-keclass Keyword < ActiveRecord::Base
+class Keyword < ActiveRecord::Base
   attr_accessible :text, :quiz, :question
 
   belongs_to :quiz
