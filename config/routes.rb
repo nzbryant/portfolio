@@ -18,6 +18,10 @@
   resources :quizzes do
     member do
       get "check_answers"
+
+      get "csv_load"
+      post "csv_upload"
+      get "csv_view"
     end
   end
   
@@ -27,10 +31,6 @@
     member do
       get "new_quiz"
       post "create_quiz"
-
-      get "csv_load"
-      post "csv_upload"
-      get "csv_view"
 
     end
   end

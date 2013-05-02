@@ -1,5 +1,7 @@
 <h1>Quiz: <%= @quiz.title %></h1>
-<h2>Subcategory: <%= @subcategory.name %></h2>
+<h2>Subcategory: 
+  <% unless @subcategory.blank? %><%= @subcategory.name %><% end %>
+</h2>
 
 <form method="get" action="/quizzes/<%= @quiz.id %>/check_answers">
 <table class="table table-striped">
@@ -33,4 +35,11 @@
   <p>
     <input type="submit" value="Check your answers">
   </p>
-</form>
+  </form>
+
+  <!--<p style ="color:red"><em>!Need to add login function so that only the person who created the quiz can edit it or upload more Q&A via a CSV file</em></p>-->
+
+  <p><%= link_to "Add questions to this Quiz", csv_load_quiz_path %></p><br>
+
+
+

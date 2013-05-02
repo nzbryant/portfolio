@@ -1,5 +1,6 @@
 <br>
 <h3>Thanks for taking the test. <strong>Your score is:&nbsp;<%= @total.to_s %>/<%=@ans %> (which is <%= @total*100/@ans %>%).</strong> </h3>
 <br>
-<p>Click <%= link_to 'here', quiz_path(@quiz) %> to take the test again... <%= link_to 'here', subcategory_path(@quiz.subcategory) %> to return to the same quiz subcategory... or <%= link_to 'here', root_path %> to return home
+<p>Click <%= link_to 'here', quiz_path(@quiz) %> to take the test again... 
+	<% unless @quiz.subcategory.blank? %><%= link_to 'here', subcategory_path(@quiz.subcategory) %> to return to the same quiz subcategory...<% end %>  or <%= link_to 'here', root_path %> to return home
 	</p>	

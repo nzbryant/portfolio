@@ -10,14 +10,8 @@
 <br>
 <p>Category: <strong><%= @category.name %></strong></p> 
 
-<%= semantic_form_for @quiz do |f| %>
-	<br>
-  <p><strong>Choose subcategory:</strong> &nbsp; <%= f.select :subcategory, @subcategories.map {|s| [s.name, s.id]} %></p>
-  <br>
-  <%= f.input :title, :label => 'Name of Quiz'%> 
-  
 <%= form_tag csv_upload_category_path, :multipart => true do %>  
-   <%= file_field_tag :file%>
-   <%= submit_tag %>
+	<%= file_field_tag :file %>
+	<%= submit_tag %>
 <% end %>
-<% end %>
+

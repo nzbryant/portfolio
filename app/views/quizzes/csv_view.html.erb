@@ -1,0 +1,17 @@
+<h1>Check to see if your quiz loaded correctly:</h1>
+<p>If not, please check the data formatting in your CSV file and try again.<p>
+<br>
+Quiz Title: <strong><%= @quiz.title %></strong>
+
+<ol>
+  <% for question in @quiz.questions %>
+    <li><%= question.text %></li>
+    <ol>
+   		<% for answer in question.answers %>
+    	<li><%= answer.text %></li>
+    	<% end %>
+  	</ol>
+  <% end %>
+</ol>
+
+ 

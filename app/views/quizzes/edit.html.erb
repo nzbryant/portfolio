@@ -1,2 +1,27 @@
-<h1>Quiz#edit</h1>
-<p>Find me in app/views/quiz/edit.html.erb</p>
+<h1>Add questions and answers to quiz: <%= @quiz.title %></h1>
+<p></p>
+
+<p>You can add questions and answers using a CSV file upload. The format of your CSV file should one row per question, with the answers separated by commas. i.e.:<br>
+	<br> 
+	<em>question,answer,answer,answer</em> (for as many answers as you want)<br>
+	<em>question,answer,answer,answer...</em><br>
+	.<br>
+	...for as many questions as you want.</p>
+<br>
+
+<p>Category: <strong><%= @category.name %></strong></p>
+
+<%= semantic_form_for @quiz do |f| %>
+	<br>
+  <p><strong>Edit subcategory:</strong> &nbsp; <%= f.select :subcategory, @subcategories.map {|s| [s.name, s.id]} %></p>
+  <br>
+  <%= f.input :title, :label => 'Name of Quiz'%> 
+
+  
+		<%= form_tag csv_upload_quiz_path, :multipart => true do %>  
+   	<%= file_field_tag :file %>
+   	<%= submit_tag %>
+	<% end %>
+<% end %>
+
+

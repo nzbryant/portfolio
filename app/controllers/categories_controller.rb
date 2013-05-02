@@ -41,9 +41,7 @@ class CategoriesController < ApplicationController
     @subcategory = Subcategory.find(params[:id])
     @quiz = Quiz.new
      
-    Question.destroy_all
-    Answer.destroy_all
-
+    
     CSV.parse(params[:file].read) do |row|  
       question = Question.new(:text => row[0])
 
@@ -57,10 +55,10 @@ class CategoriesController < ApplicationController
       
     end
     # @category.quizzes << @quiz
-    # @quiz.save
-
-    #redirect_to csv_view_category_path
-    redirect_to quiz_path
+     @quiz.save
+     
+    redirect_to csv_view_category_path
+    #redirect_to quiz_path
   end
 
   def csv_view
