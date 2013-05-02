@@ -1,0 +1,7 @@
+<br>
+<h3>Upload a quiz CSV file - one quiz per file:</h3>
+<br>
+<%= form_tag csv_upload_category_path, :multipart => true do %>  
+   <%= file_field_tag :file%>
+   <%= submit_tag %>
+<% end %>

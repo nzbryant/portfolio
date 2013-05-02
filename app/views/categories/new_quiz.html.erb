@@ -1,3 +1,11 @@
 <h1>Create a New Quiz</h1>
+<br>
+<h3>There are two ways to create a quiz</h3>
+<p>1. You can use the simple form below, adding questions and answers as you go (make sure you choose which answer is correct for each question!)</p>
+<p>2. Or, if you have your questions and answers in a CSV file, click here to upload the file: <%= link_to "CSV Upload", csv_load_category_path %></p>
 
-<%= render partial: 'form' %>
+<br>
+<h3><em>Form to create a quiz</em><br></h3>
+<br>
+<p><strong>Change category:&nbsp; </strong><%= link_to 'Categories', root_path %>
+<%= render partial: 'form' %></p>

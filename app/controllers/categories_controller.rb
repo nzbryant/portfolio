@@ -1,3 +1,5 @@
+require 'csv'
+
 class CategoriesController < ApplicationController
   
   def show
@@ -15,7 +17,7 @@ class CategoriesController < ApplicationController
    end      
 	
 	def create_quiz
-    @quiz = Quiz.new(params[:quiz]) # We create a new member from the params passed by the form
+    @quiz = Quiz.new(params[:quiz]) 
     respond_to do |format|
       if @quiz.save
         format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }
@@ -26,5 +28,38 @@ class CategoriesController < ApplicationController
       end
    	end
  	end
+
+  def csv_upload
+
+    @category = Category.find(params[:id])
+    @quiz = Quiz.new
+
+    Question.destroy_all
+    CSV.parse(params[:file].read) do |row|  
+
+      question = Question.new(:text => row[1])
+
+      (1..row.length).to_a.each_with_index do |ans,idx|
+        answer = Answer.new(:text => row[idx])
+        question.answers << answer
+        answer.save
+      end
+      
+      question.save
+      
+    end
+    
+    redirect_to csv_view_category_path
+  end
+
+  def csv_view
+    @questions = Question.all
+    @answers = Answer.all
+  end
+
+
+  def csv_load
+
+  end
 
 end

@@ -1,7 +1,7 @@
 <%= semantic_form_for @quiz do |f| %>
 
   <br>
-  <strong style="font-size:16px">Choose subcategory:</strong> &nbsp; <%= f.select :subcategory, @subcategories.map {|s| [s.name, s.id]} %>
+  <p><strong>Choose subcategory:</strong> &nbsp; <%= f.select :subcategory, @subcategories.map {|s| [s.name, s.id]} %></p>
   <br>
   <br>
   <%= f.input :title, :label => 'Name of Quiz'%> 

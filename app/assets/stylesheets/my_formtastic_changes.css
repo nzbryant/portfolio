@@ -5,7 +5,7 @@
 	float: left;
 	padding-top: .3em;
 	padding-bottom: .3em;
-	font-size: 16px;
+	font-size: 14px;
 
 }
 
@@ -18,4 +18,15 @@
 	padding-left: 17%;
 	padding-top: 1.5em;
 
+}
+
+input[type="file"] {
+  height: 40px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  margin-top: 20px;
+  /* For IE7, add top margin to align select with labels */
+  font-size: 14px;
+
+  line-height: 10px;
 }

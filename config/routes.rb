@@ -1,9 +1,7 @@
  Speedlearner::Application.routes.draw do
 
 
-  get "csv/upload"
-
-  get "csv/view"
+  
 
   get "subcategories/show"
 
@@ -29,6 +27,11 @@
     member do
       get "new_quiz"
       post "create_quiz"
+
+      get "csv_load"
+      post "csv_upload"
+      get "csv_view"
+
     end
   end
 

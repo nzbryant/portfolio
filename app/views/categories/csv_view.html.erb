@@ -1,0 +1,10 @@
+<h1>Questions</h1>
+
+<ol>
+  <% for question in @questions %>
+    <li><%= question.text %></li>
+   <% for answer in question.answers %>
+    <li><%= answer.text %></li>
+    <% end %>
+  <% end %>
+</ol>
