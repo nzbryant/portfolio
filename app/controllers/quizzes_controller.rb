@@ -10,6 +10,7 @@ class QuizzesController < ApplicationController
 
   def show
      @quiz = Quiz.find(params[:id]) # To show a specific quiz, we must first find that quiz. Returns show.html.erb.
+     @subcategory = @quiz.subcategory
   end
 
   def check_answers

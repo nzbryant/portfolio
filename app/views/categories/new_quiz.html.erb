@@ -6,5 +6,5 @@
 
 <br>
 <h3><em>Form to create a quiz</em><br></h3>
-<p><strong>Change category:&nbsp; </strong><%= link_to 'Categories', root_path %>
+<p>Category: <strong><%= @category.name %></strong>&nbsp;(<%= link_to 'change category', root_path %>)
 <%= render partial: 'form' %></p>

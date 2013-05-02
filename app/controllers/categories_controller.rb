@@ -28,18 +28,26 @@ class CategoriesController < ApplicationController
       end
    	end
  	end
-
-  def csv_upload
-
+  
+  def csv_load
     @category = Category.find(params[:id])
+    @subcategories = @category.subcategories
     @quiz = Quiz.new
 
+  end
+
+  def csv_upload
+    @category = Category.find(params[:id])
+    @subcategory = Subcategory.find(params[:id])
+    @quiz = Quiz.new
+     
     Question.destroy_all
+    Answer.destroy_all
+
     CSV.parse(params[:file].read) do |row|  
+      question = Question.new(:text => row[0])
 
-      question = Question.new(:text => row[1])
-
-      (1..row.length).to_a.each_with_index do |ans,idx|
+      (1..(row.length - 1)).to_a.each do |idx|
         answer = Answer.new(:text => row[idx])
         question.answers << answer
         answer.save
@@ -48,18 +56,20 @@ class CategoriesController < ApplicationController
       question.save
       
     end
-    
-    redirect_to csv_view_category_path
+    # @category.quizzes << @quiz
+    # @quiz.save
+
+    #redirect_to csv_view_category_path
+    redirect_to quiz_path
   end
 
   def csv_view
+    @category = Category.find(params[:id])
+    @subcategory = @category.subcategories
+    @quiz = Quiz.new
     @questions = Question.all
-    @answers = Answer.all
   end
 
 
-  def csv_load
-
-  end
 
 end
