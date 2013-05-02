@@ -66,7 +66,7 @@ a9 = Answer.create :text => "30%", :is_correct => true, :question=> q3
 # end
 
 # Subcategory.all.each do |subcategory| 
-# 	(1..5).to_a.each do 
+# 	(1..4).to_a.each do 
 # 		qu = Quiz.create(
 # 			:title => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
 # 			:subcategory => subcategory,
@@ -76,7 +76,7 @@ a9 = Answer.create :text => "30%", :is_correct => true, :question=> q3
 # end
 
 # Quiz.all.each do |quiz| 
-# 	(1..5).to_a.each do 
+# 	(1..4).to_a.each do 
 # 		qz = Question.create(
 # 			:text => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
 # 			:quiz => quiz

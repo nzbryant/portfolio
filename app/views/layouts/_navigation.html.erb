@@ -1,8 +1,5 @@
-<%= 
-  link_to_unless_current 'Speed Learner', root_path, :class => 'brand' do
-    content_tag :span, 'Speed Learner', :class => 'brand'
-  end
-%>
+<%= link_to_unless_current image_tag('speedlearner_logo.jpg'), root_path %>
+
 <ul class="nav">
 
   <li><!--%=
@@ -10,3 +7,4 @@
       content_tag :span, 'Create Quiz', :class => 'this_page'
     end
   %--></li>
+</ul>
