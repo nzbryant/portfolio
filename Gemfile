@@ -13,6 +13,8 @@ gem 'simple_form'
 gem 'cocoon'
 gem 'formtastic'
 gem 'haml-rails'
+gem 'lorem'
+gem 'populator'
 
 
 # Gems used only for assets and not required
@@ -34,9 +36,7 @@ gem 'jquery-rails'
 
 group :development do
 	gem 'better_errors' 
-	gem 'lorem'
-	gem 'populator'
-end
+	end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

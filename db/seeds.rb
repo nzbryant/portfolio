@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #require "lorem"
-#require "populator"
+require "populator"
 #categories
 
 Category.delete_all
@@ -52,53 +52,53 @@ a7 = Answer.create :text => "A new band from Detroit", :is_correct => false, :qu
 a8 = Answer.create :text => "Talking with management", :is_correct => false, :question => q2
 a9 = Answer.create :text => "30%", :is_correct => true, :question=> q3
 
-#  Category.populate 5 do |category|
-#    category.name = Populator.words(1..3).titleize
-#  end
+ Category.populate 5 do |category|
+   category.name = Populator.words(1..3).titleize
+ end
 
-# Category.all.each do |category| 
-# 	(1..5).to_a.each do 
-# 		sub = Subcategory.create(
-# 			:name => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
-# 			:category => category
-# 		)
-# 	end
-# end
+Category.all.each do |category| 
+	(1..5).to_a.each do 
+		sub = Subcategory.create(
+			:name => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
+			:category => category
+		)
+	end
+end
 
-# Subcategory.all.each do |subcategory| 
-# 	(1..4).to_a.each do 
-# 		qu = Quiz.create(
-# 			:title => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
-# 			:subcategory => subcategory,
-# 			:is_private => :false
-# 		)
-# 	end
-# end
+Subcategory.all.each do |subcategory| 
+	(1..4).to_a.each do 
+		qu = Quiz.create(
+			:title => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
+			:subcategory => subcategory,
+			:is_private => :false
+		)
+	end
+end
 
-# Quiz.all.each do |quiz| 
-# 	(1..4).to_a.each do 
-# 		qz = Question.create(
-# 			:text => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
-# 			:quiz => quiz
-# 		)
-# 	end
-# end
+Quiz.all.each do |quiz| 
+	(1..4).to_a.each do 
+		qz = Question.create(
+			:text => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
+			:quiz => quiz
+		)
+	end
+end
 
-# Question.all.each do |question| 
-# 		ans = Answer.create(
-# 			:text => "hint - pick me " + (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
-# 			:is_correct => true,
-# 			:question => question
-# 		)
-# 		ans = Answer.create(
-# 			:text =>  (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
-# 			:is_correct => false,
-# 			:question => question
-# 		)
-# 		ans = Answer.create(
-# 			:text => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
-# 			:is_correct => false,
-# 			:question => question
-# 		)
-# 	end
+Question.all.each do |question| 
+		ans = Answer.create(
+			:text => "hint - pick me " + (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
+			:is_correct => true,
+			:question => question
+		)
+		ans = Answer.create(
+			:text =>  (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
+			:is_correct => false,
+			:question => question
+		)
+		ans = Answer.create(
+			:text => (0...8).map{(65+rand(26)).chr}.join.titleize + " " + (0...8).map{(65+rand(26)).chr}.join.titleize,
+			:is_correct => false,
+			:question => question
+		)
+	end
 

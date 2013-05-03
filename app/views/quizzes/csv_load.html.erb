@@ -1,16 +1,22 @@
 <h2>Add questions and answers by uploading a CSV file.<br></h2>
 
-<p><strong>How do I create a CSV file?</strong><br>There are several ways, but the easiest is to save an Excel file as a CSV filetype (use the drop down box when you 'Save As'. Another way is to type the questions and answers in a text file, with each question on a new row, and commas separating the answers.</p><br>
+<p><strong>How do I create a CSV file?</strong></p>
+	<ul>
+		<li><p>The easiest way is to save an Excel file as a CSV filetype (use the drop down box when you 'Save As').</li></p> 
+		<li><p>Another way is to type the questions and answers in a text file, with each question on a new row, and commas separating the answers.</p></li>
+	</ul>
+	<br>
 
-<p><strong>The format of your CSV file</strong><br>The format of the file should one row per question, with the answers separated by commas. i.e.:<br>
+<p><strong>Format your CSV file like this:</strong><br>The format of the file should one row per question, with the answers separated by commas. i.e.:<br>
 	<br> 
 	<em>question,answer,answer,answer</em> (for as many answers as you want)<br>
 	<em>question,answer,answer,answer...</em><br>
 	.<br>
-	...for as many questions as you want.</p>
+	...for as many questions as you want.
+</p>
+<p style><em>Note: We are working on adding the 'correct question' toggle to the answers in uploaded CSV files</em></p>
 
-<br>
-<h3>Quiz Title: <%= @quiz.title %></h3>
+<h3>The Quiz the Q&A will be added to: <%= @quiz.title %></h3>
 	<%= form_tag csv_upload_quiz_path, :multipart => true do %>  
 	<%= file_field_tag :file %>
 	<%= submit_tag %>
